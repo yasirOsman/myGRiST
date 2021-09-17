@@ -110,6 +110,7 @@ export default class QuestionBox extends React.Component{
                 )
             break;
             case "integer":
+                //allows user to give numerical answers in a text field
                 Type = (
                     <View style={styles.IntegerBar}>
                     <TextInput name="userInput" style={styles.TextInputStyle} onChangeText={(text) => this.answerUpdate(text)} />
@@ -118,6 +119,7 @@ export default class QuestionBox extends React.Component{
                 )
             break;
             case "date-year":
+                //allows user to input date through a text field
                 Type = (
                     <View style={styles.IntegerBar}>
                     <TextInput name="userInput" style={styles.TextInputStyle} onChangeText={(text) => this.answerUpdate(text)} />
@@ -127,7 +129,7 @@ export default class QuestionBox extends React.Component{
             break;
             case "nominal":
                    default:
-                        //checked icon and unchecked icon denote the visual representation of the inputs, chosen as they closely match the online website version
+                        //creates the yes/no options through the use of checkboxes
                         Type = (
                             <View style={styles.CheckBoxContainer}>
                             <CheckBox  title='Yes' checked={this.state.yes} checkedIcon='dot-circle-o'  uncheckedIcon='circle-o'  checkedColor={"#87C4A3"} onPress={() => this.CheckBoxAnswer("YES" )}/>
